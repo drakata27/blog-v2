@@ -1,5 +1,5 @@
 import { auth, signOut, signIn } from "@/auth";
-import { BadgePlus, LogOut, User } from "lucide-react";
+import { LogOut, PlusSquare, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
@@ -18,7 +18,7 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link href="/post/add">
-                <BadgePlus className="size-6 text-green-500" />
+                <PlusSquare className="size-6 text-green-500" />
               </Link>
 
               <form
