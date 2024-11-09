@@ -9,7 +9,7 @@ const Hero = () => {
     <Link href={"/"}>
       <div className="relative">
         <div className="relative w-full group">
-          <div className="absolute bottom-0 left-0 p-8 z-10 max-w-xl  flex items-center space-x-4">
+          <div className="absolute bottom-0 left-0 p-8 z-10 max-w-xl flex items-center space-x-4">
             <Avatar className="size-10">
               <AvatarImage src={"/avatar.png"} alt={"avatar"} />
               <AvatarFallback>
@@ -22,15 +22,16 @@ const Hero = () => {
               <p className="text-white text-lg">Description</p>
             </div>
           </div>
-
-          <Image
-            src="/HeroPlaceholder.jpeg"
-            alt="placeholder"
-            layout="responsive"
-            width={1920}
-            height={1080}
-            className="w-full rounded-xl h-full object-cover transition-all duration-300 group-hover:brightness-50"
-          />
+          <div className="overflow-hidden rounded-xl">
+            <Image
+              src="/HeroPlaceholder.jpeg"
+              alt="placeholder"
+              layout="responsive"
+              width={1920}
+              height={1080}
+              className="image-transition"
+            />
+          </div>
         </div>
       </div>
     </Link>

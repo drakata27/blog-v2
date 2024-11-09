@@ -70,4 +70,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  /* global.css */
+  .image-transition {
+    @apply object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-105 group-hover:brightness-50;
+  }
 }
