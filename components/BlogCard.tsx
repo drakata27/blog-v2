@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { User } from "lucide-react";
+import { EyeIcon, User } from "lucide-react";
 import { Author, Blog } from "@/sanity/types";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ const BlogCard = ({ blog }: { blog: BlogTypeCard }) => {
     // _createdAt,
     author,
     description,
-    // views,
+    views,
     // likes,
     image,
     timeToRead,
@@ -42,6 +42,10 @@ const BlogCard = ({ blog }: { blog: BlogTypeCard }) => {
               <p className="text-gray-400">{timeToRead} min</p>
             )}
           </div>
+        </div>
+        <div className="flex mt-3 justify-end">
+          <EyeIcon className="text-gray-300 mr-2" />
+          <p className="text-gray-300">{views}</p>
         </div>
       </div>
     </Link>

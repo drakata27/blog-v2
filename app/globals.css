@@ -74,4 +74,7 @@ body {
   .image-transition {
     @apply object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-105 group-hover:brightness-50;
   }
+  .prose h1 {
+    @apply text-gray-300; /* Apply gray color to h1 */
+  }
 }
