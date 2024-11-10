@@ -8,7 +8,7 @@ export default async function Home() {
   const moreBlogs = blogs.slice(1);
   return (
     <>
-      <div className="mt-2 overflow-hidden sm:pt-5 sm:pl-20 sm:pr-20 lg:pl-40 lg:pr-40 xl:pl-72 xl:pr-72">
+      <div className="mt-2 overflow-hidden sm:pt-5 sm:pl-20 sm:pr-20 lg:pl-40 lg:pr-40 xl:pl-72 xl:pr-72 lg:ml-40 lg:mr-40">
         <h1 className="text-white text-4xl font-bold mb-4">Latest Blog</h1>
         <Hero blog={blogs[0]} />
         <div className="p-4">

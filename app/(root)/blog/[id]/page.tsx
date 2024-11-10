@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDate } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
-import { User, EyeIcon } from "lucide-react";
+import { User, EyeIcon, Clock } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -17,7 +17,7 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
   const parsedContent = md.render(blog?.post || "");
 
   return (
-    <div className="ml-[2rem] mr-[2rem] mt-5 md:ml-[5rem] md:mr-[5rem] lg:ml-[20rem] lg:mr-[20rem]">
+    <div className="ml-[2rem] mr-[2rem] mt-5 md:ml-[5rem] md:mr-[5rem] lg:ml-[40rem] lg:mr-[40rem]">
       <h1 className="text-white mt-5 mb-5 text-5xl font-bold">{blog.title}</h1>
       <h2 className="text-gray-300 mt-5 mb-5 text-3xl">{blog.description}</h2>
 
@@ -45,6 +45,13 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
 
       <div className="flex mt-3 justify-end">
+        <Clock className="text-gray-300 mr-2" />
+        {blog.timeToRead > 1 ? (
+          <p className="text-gray-300 mr-4">{blog.timeToRead} mins</p>
+        ) : (
+          <p className="text-gray-300 mr-4">{blog.timeToRead} min</p>
+        )}
+
         <EyeIcon className="text-gray-300 mr-2" />
         <p className="text-gray-300">{blog.views}</p>
       </div>
