@@ -9,7 +9,7 @@ export default async function Home() {
   const moreBlogs = blogs.slice(1);
 
   const session = await auth();
-  console.log(session?.id);
+  // console.log(session?.id);
 
   return (
     <>

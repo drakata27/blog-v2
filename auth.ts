@@ -4,6 +4,8 @@ import { AUTHOR_BY_GITHUB_ID_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { writeClient } from "@/sanity/lib/write-client";
 
+const ALLOWED_GITHUB_EMAILS = [process.env.MY_GITHUB_EMAIL];
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [GitHub],
   callbacks: {
@@ -11,6 +13,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       user: { name, email, image },
       profile: { id, login, bio },
     }) {
+      if (!ALLOWED_GITHUB_EMAILS.includes(email!)) {
+        return false;
+      }
       const existingUser = await client
         .withConfig({ useCdn: false })
         .fetch(AUTHOR_BY_GITHUB_ID_QUERY, {
