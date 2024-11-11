@@ -777,7 +777,7 @@
         },
         "optional": true
       },
-      "post": {
+      "content": {
         "type": "objectAttribute",
         "value": {
           "type": "string"

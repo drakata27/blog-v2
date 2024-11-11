@@ -144,7 +144,7 @@ export type Blog = {
   likes?: number;
   description?: string;
   image?: string;
-  post?: string;
+  content?: string;
 };
 
 export type Slug = {

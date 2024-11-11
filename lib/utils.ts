@@ -20,3 +20,7 @@ export function calculateReadTime(content: string) {
   const readingTime = Math.ceil(wordCount / 238);
   return readingTime;
 }
+
+export function parseServerActionResponse<T>(response: T) {
+  return JSON.parse(JSON.stringify(response));
+}

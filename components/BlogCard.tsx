@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Clock, EyeIcon, User } from "lucide-react";
+import { Clock, User } from "lucide-react";
 import { Author, Blog } from "@/sanity/types";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ const BlogCard = ({ blog }: { blog: BlogTypeCard }) => {
     // _createdAt,
     author,
     description,
-    views,
+    // views,
     // likes,
     image,
     timeToRead,
