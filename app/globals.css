@@ -77,4 +77,7 @@ body {
   .prose h1 {
     @apply text-gray-300; /* Apply gray color to h1 */
   }
+  .prose h2 {
+    @apply text-gray-400; /* Apply gray color to h1 */
+  }
 }

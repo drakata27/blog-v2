@@ -17,8 +17,7 @@ export const BLOGS_QUERY =
     content
 }`);
 
-export const STARTUP_BY_ID_QUERY =
-  defineQuery(`*[_type == "blog" && _id==$id][0]{
+export const BLOG_BY_ID_QUERY = defineQuery(`*[_type == "blog" && _id==$id][0]{
   _id,
     title,
     slug,

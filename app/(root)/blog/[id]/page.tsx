@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDate } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
-import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
+import { BLOG_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { User, Clock } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -13,7 +13,7 @@ const md = markdownit();
 const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
   const session = await auth();
   const id = (await params).id;
-  const blog = await client.fetch(STARTUP_BY_ID_QUERY, { id });
+  const blog = await client.fetch(BLOG_BY_ID_QUERY, { id });
 
   const parsedContent = md.render(blog?.content || "");
 
@@ -52,10 +52,13 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
         ) : (
           <p className="text-gray-300 mr-4">{blog.timeToRead} min</p>
         )}
-
-        {/* <EyeIcon className="text-gray-300 mr-2" />
-        <p className="text-gray-300">{blog.views}</p> */}
-        {session ? <DeleteButton id={id} /> : <></>}
+        {session ? (
+          <>
+            <DeleteButton id={id} />
+          </>
+        ) : (
+          <></>
+        )}
       </div>
 
       <Image
