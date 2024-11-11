@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { formatDate } from "@/lib/utils";
+import { formatDate, calculateReadTime } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { User, EyeIcon, Clock } from "lucide-react";
@@ -15,6 +15,8 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
   if (!blog) return notFound();
 
   const parsedContent = md.render(blog?.post || "");
+
+  // const timeToRead = calculateReadTime(parsedContent);
 
   return (
     <div className="ml-[2rem] mr-[2rem] mt-5 md:ml-[5rem] md:mr-[5rem] lg:ml-[40rem] lg:mr-[40rem]">
@@ -52,8 +54,8 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
           <p className="text-gray-300 mr-4">{blog.timeToRead} min</p>
         )}
 
-        <EyeIcon className="text-gray-300 mr-2" />
-        <p className="text-gray-300">{blog.views}</p>
+        {/* <EyeIcon className="text-gray-300 mr-2" />
+        <p className="text-gray-300">{blog.views}</p> */}
       </div>
 
       <Image

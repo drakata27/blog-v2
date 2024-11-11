@@ -12,3 +12,11 @@ export function formatDate(date: string) {
     year: "numeric",
   });
 }
+
+export function calculateReadTime(content: string) {
+  // Split content into words and count them
+  const wordCount = content.split(/\s+/).length;
+  // Calculate the number of minutes, rounding up for any remaining words
+  const readingTime = Math.ceil(wordCount / 238);
+  return readingTime;
+}
