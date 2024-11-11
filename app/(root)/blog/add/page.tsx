@@ -7,10 +7,10 @@ const Page = async () => {
   const session = await auth();
   if (!session) redirect("/");
   return (
-    <>
-      <h1 className="text-white mt-3 mr-5 ml-5">Add Blog</h1>
+    <div className="mx-auto px-4 lg:px-20 max-w-4xl">
+      <h1 className="text-4xl mt-3 font-bold ">Add Blog</h1>
       <BlogForm />
-    </>
+    </div>
   );
 };
 

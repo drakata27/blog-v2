@@ -17,7 +17,7 @@ export default async function Home() {
         <h1 className="text-white text-4xl font-bold mb-4">Latest Blog</h1>
         <Hero blog={blogs[0]} />
         <div className="p-4">
-          <h1 className="text-white text-4xl font-bold">More Blogs</h1>
+          <h1 className=" text-4xl font-bold">More Blogs</h1>
 
           <div className="grid gap-3 mt-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
             {moreBlogs?.length > 0 ? (

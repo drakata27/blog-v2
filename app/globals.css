@@ -9,7 +9,7 @@ body {
 @layer base {
   :root {
     /* --background: 0 0% 100%; */
-    --background: #04152d;
+    --background: lightgray;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -74,10 +74,13 @@ body {
   .image-transition {
     @apply object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-105 group-hover:brightness-50;
   }
-  .prose h1 {
-    @apply text-gray-300; /* Apply gray color to h1 */
+  h1 {
+    @apply text-black dark:text-gray-400;
   }
-  .prose h2 {
-    @apply text-gray-400; /* Apply gray color to h1 */
+  h2 {
+    @apply text-black dark:text-gray-400;
+  }
+  p {
+    @apply text-black dark:text-gray-500;
   }
 }

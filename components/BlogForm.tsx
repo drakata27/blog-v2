@@ -75,7 +75,6 @@ const BlogForm = () => {
         <Input
           id="title"
           name="title"
-          className="text-white"
           required
           placeholder="Give your post a title..."
         />
@@ -90,7 +89,6 @@ const BlogForm = () => {
         <Input
           id="description"
           name="description"
-          className="text-white"
           required
           placeholder="Describe briefly what this post is about..."
         />
@@ -103,7 +101,6 @@ const BlogForm = () => {
         <Input
           id="link"
           name="link"
-          className="text-white"
           required
           placeholder="Paste a valid image URL..."
         />
@@ -133,7 +130,7 @@ const BlogForm = () => {
         {errors.content && <p className="">{errors.content}</p>}
       </div>
 
-      <Button type="submit" className=" text-black mt-5" disabled={isPending}>
+      <Button type="submit" className="  mt-5" disabled={isPending}>
         {isPending ? "Posting..." : "Post"}
         <Send className="size-6 ml-2 text-black" />
       </Button>

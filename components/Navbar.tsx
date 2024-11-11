@@ -4,17 +4,19 @@ import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = async () => {
   const session = await auth();
   return (
-    <header className="px-5 py-3 bg-black shadow-sm ">
+    <header className="px-5 py-3 bg-gray-400 dark:bg-black shadow-sm ">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <span className="text-white">aleksdraka blog</span>
         </Link>
 
         <div className="flex items-center gap-5 text-white">
+          <ThemeToggle />
           {session && session?.user ? (
             <>
               <Link href="/blog/add">

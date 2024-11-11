@@ -33,9 +33,9 @@ const Hero = async ({ blog }: { blog: BlogTypeCard }) => {
               </AvatarFallback>
             </Avatar>
 
-            <div className="bg-gray-500 p-3 rounded-xl backdrop-blur-xl">
-              <h1 className="text-white text-2xl font-bold">{title}</h1>
-              <p className="text-white text-lg">{description}</p>
+            <div className="bg-gray-700 p-3 rounded-xl backdrop-blur-xl">
+              <h1 className=" text-2xl font-bold">{title}</h1>
+              <p className=" text-lg font-bold">{description}</p>
             </div>
           </div>
           <div className="overflow-hidden rounded-xl">
