@@ -1,10 +1,9 @@
-import { auth, signOut, signIn } from "@/auth";
+import { auth, signOut } from "@/auth";
 import { LogOut, PlusSquare, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
-import ThemeToggle from "./ThemeToggle";
 
 const Navbar = async () => {
   const session = await auth();
@@ -16,7 +15,6 @@ const Navbar = async () => {
         </Link>
 
         <div className="flex items-center gap-5 text-white">
-          <ThemeToggle />
           {session && session?.user ? (
             <>
               <Link href="/blog/add">
@@ -48,17 +46,7 @@ const Navbar = async () => {
               </Link>
             </>
           ) : (
-            <form
-              action={async () => {
-                "use server";
-
-                await signIn("github");
-              }}
-            >
-              <button type="submit" className="text-black">
-                Login
-              </button>
-            </form>
+            <></>
           )}
         </div>
       </nav>

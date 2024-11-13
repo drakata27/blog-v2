@@ -22,7 +22,7 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
       <h1 className="text-white mt-5 mb-5 text-5xl font-bold">{blog.title}</h1>
       <h2 className="text-gray-300 mt-5 mb-5 text-3xl">{blog.description}</h2>
 
-      <div className="flex justify-between border-t-2 border-b-2 border-gray-500">
+      <div className="flex justify-between border p-3 rounded-xl border-gray-500">
         <div className="max-w-xl flex items-center space-x-4 mb-3 mt-3">
           <Avatar className="size-10 border">
             <AvatarImage
@@ -71,7 +71,7 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
       />
       {parsedContent ? (
         <article
-          className="prose max-w-4xl break-all text-white dark:text-gray-200"
+          className="prose max-w-4xl break-all text-white "
           dangerouslySetInnerHTML={{ __html: parsedContent }}
         />
       ) : (

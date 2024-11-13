@@ -1,9 +1,12 @@
+import { auth, signIn, signOut } from "@/auth";
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const Footer = async () => {
+  const session = await auth();
+
   return (
-    <footer className="dark:bg-black dark:text-white bg-gray-400 text-black p-6 mt-5">
+    <footer className="bg-black text-white p-6 mt-5">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* About Section */}
@@ -64,6 +67,32 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Aleksandar Drakaliyski. All rights
             reserved.
           </p>
+
+          {session && session?.user ? (
+            <form
+              action={async () => {
+                "use server";
+
+                await signOut({ redirectTo: "/" });
+              }}
+            >
+              <button type="submit" className="text-gray-400">
+                Sign Out
+              </button>
+            </form>
+          ) : (
+            <form
+              action={async () => {
+                "use server";
+
+                await signIn("github");
+              }}
+            >
+              <button type="submit" className="text-black">
+                Login
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </footer>
