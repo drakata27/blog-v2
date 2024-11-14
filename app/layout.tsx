@@ -18,6 +18,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "aleksdraka",
   description: "Welcome to my blog",
+  verification: {
+    google: "Ps5Pj4XAVGyH9AaDTxr7nbp36CrCTcIIj83lmoLF4LU",
+  },
 };
 
 export default function RootLayout({
