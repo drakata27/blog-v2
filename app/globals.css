@@ -98,4 +98,7 @@ body {
   .prose h3 {
     @apply text-gray-400;
   }
+  .prose img {
+    @apply rounded-xl;
+  }
 }
