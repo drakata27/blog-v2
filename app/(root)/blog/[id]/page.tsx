@@ -47,11 +47,7 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 
       <div className="flex mt-3 justify-end">
         <Clock className="text-gray-300 mr-2" />
-        {blog.timeToRead > 1 ? (
-          <p className="text-gray-300 mr-4">{blog.timeToRead} mins</p>
-        ) : (
-          <p className="text-gray-300 mr-4">{blog.timeToRead} min</p>
-        )}
+        <p className="text-gray-300 mr-4">{blog.timeToRead} min read</p>
         {session ? (
           <>
             <DeleteButton id={id} />
@@ -71,7 +67,7 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
       />
       {parsedContent ? (
         <article
-          className="prose max-w-4xl break-all text-white "
+          className="prose max-w-4xl break-all text-white"
           dangerouslySetInnerHTML={{ __html: parsedContent }}
         />
       ) : (

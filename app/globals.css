@@ -86,4 +86,16 @@ body {
   .prose h1 {
     @apply text-gray-200;
   }
+
+  input {
+    @apply text-gray-200;
+  }
+
+  .prose strong,
+  .prose th {
+    @apply text-gray-400;
+  }
+  .prose h3 {
+    @apply text-gray-400;
+  }
 }
