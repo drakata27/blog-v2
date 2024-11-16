@@ -101,4 +101,7 @@ body {
   .prose img {
     @apply rounded-xl;
   }
+  .prose a {
+    @apply text-blue-400;
+  }
 }

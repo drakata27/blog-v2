@@ -65,9 +65,10 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
         height={1080}
         className="mt-3 mb-5 rounded-xl"
       />
+      {/* TODO: Add blank target and change colour */}
       {parsedContent ? (
         <article
-          className="prose max-w-4xl break-all text-white"
+          className="prose max-w-4xl break-words text-white"
           dangerouslySetInnerHTML={{ __html: parsedContent }}
         />
       ) : (
