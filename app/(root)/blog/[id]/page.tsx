@@ -8,6 +8,7 @@ import React from "react";
 import markdownit from "markdown-it";
 import { auth } from "@/auth";
 import DeleteButton from "@/components/DeleteButton";
+import Link from "next/link";
 const md = markdownit();
 
 const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -46,15 +47,32 @@ const BlogDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
 
       <div className="flex mt-3 justify-end">
-        <Clock className="text-gray-300 mr-2" />
-        <p className="text-gray-300 mr-4">{blog.timeToRead} min read</p>
-        {session ? (
-          <>
-            <DeleteButton id={id} />
-          </>
-        ) : (
-          <></>
-        )}
+        <div className="flex mr-2">
+          <Link
+            href={"https://www.linkedin.com/in/aleksandar-drakaliyski/"}
+            className="mr-2"
+          >
+            <Avatar className="size-6 border">
+              <AvatarImage src="/images/linkedin.jpg" />
+            </Avatar>
+          </Link>
+          <Link href={"https://github.com/drakata27"}>
+            <Avatar className="size-6 border">
+              <AvatarImage src="/images/github.png" />
+            </Avatar>
+          </Link>
+        </div>
+        <div className="flex">
+          <Clock className="text-gray-300 mr-2" />
+          <p className="text-gray-300 mr-4">{blog.timeToRead} min read</p>
+          {session ? (
+            <>
+              <DeleteButton id={id} />
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
 
       <Image
